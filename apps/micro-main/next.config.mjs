@@ -4,8 +4,12 @@ const nextConfig = {
     async rewrites() {
         return [
             {
+                source: '/:path*',
+                destination: `/:path*`,
+            },
+            {
                 source: '/micro-one',
-                destination: `http://localhost:3001/micro-one`,
+                destination: `http://localhost:3001/micro-one/:path*`,
             }
         ]
       },
